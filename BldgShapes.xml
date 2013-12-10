@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#b8dee6" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+
+<Parameters>
+  <Parameter name="bounds">-180,-85.05112877980659,180,85.05112877980659</Parameter>
+  <Parameter name="center">0,0,2</Parameter>
+  <Parameter name="format">png</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="maxzoom">22</Parameter>
+  <Parameter name="name"><![CDATA[BldgShapes]]></Parameter>
+</Parameters>
+
+
+<Style name="countries" filter-mode="first" >
+  <Rule>
+    <PolygonSymbolizer fill="#ffffff" />
+  </Rule>
+</Style>
+<Style name="countries-outline" filter-mode="first" >
+  <Rule>
+    <LineSymbolizer stroke="#85c5d3" stroke-width="2" stroke-linejoin="round" />
+  </Rule>
+</Style>
+<Layer name="countries"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>countries-outline</StyleName>
+    <StyleName>countries</StyleName>
+    <Datasource>
+       <Parameter name="file"><![CDATA[data/countries/82945364-10m-admin-0-countries.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="buildings" filter-mode="first" >
+  <Rule>
+    <Filter>([height] &gt; 120)</Filter>
+    <PolygonSymbolizer fill="#444444" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 108)</Filter>
+    <PolygonSymbolizer fill="#555555" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 96)</Filter>
+    <PolygonSymbolizer fill="#666666" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 84)</Filter>
+    <PolygonSymbolizer fill="#777777" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 72)</Filter>
+    <PolygonSymbolizer fill="#888888" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 60)</Filter>
+    <PolygonSymbolizer fill="#999999" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 48)</Filter>
+    <PolygonSymbolizer fill="#aaaaaa" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 36)</Filter>
+    <PolygonSymbolizer fill="#bbbbbb" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 24)</Filter>
+    <PolygonSymbolizer fill="#cccccc" />
+  </Rule>
+  <Rule>
+    <Filter>([height] &gt; 12)</Filter>
+    <PolygonSymbolizer fill="#dddddd" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="#ffffff" />
+  </Rule>
+</Style>
+<Layer name="buildings"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>buildings</StyleName>
+    <Datasource>
+       <Parameter name="file"><![CDATA[data/buildings/lariac_buildings_2008.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+       <Parameter name="id"><![CDATA[buildings]]></Parameter>
+       <Parameter name="project"><![CDATA[BldgShapes]]></Parameter>
+       <Parameter name="srs"><![CDATA[+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs]]></Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>

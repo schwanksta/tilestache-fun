@@ -1,0 +1,8 @@
+ModestMaps==1.4.2
+PIL==1.1.7
+TileStache==1.49.8
+Werkzeug==0.9.4
+boto==2.19.0
+mercurial==2.7.2
+simplejson==3.3.1
+wsgiref==0.1.2
